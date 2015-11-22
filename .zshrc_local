@@ -1,0 +1,13 @@
+function setproxy () {
+	export http_proxy=http://proxy.clondiag.jena:8080
+	export https_proxy=$http_proxy
+	export ftp_proxy=$http_proxy
+}
+
+function unsetproxy () {
+	unset http_proxy
+	unset https_proxy
+	unset ftp_proxy
+}
+
+export PATH=$PATH:$ProgramW6432/Oracle/VirtualBox/:$LOCALAPPDATA/Vagrant/bin:$LOCALAPPDATA/Docker
