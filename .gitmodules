@@ -1,0 +1,9 @@
+[submodule ".reference/OSXDefaults"]
+	path = .reference/OSXDefaults
+	url = https://github.com/kevinSuttle/OSXDefaults.git
+[submodule ".reference/ptb"]
+	path = .reference/ptb
+	url = https://github.com/ptb/Mac-OS-X-Lion-Setup.git
+[submodule ".reference/mathiasbynens"]
+	path = .reference/mathiasbynens
+	url = https://github.com/mathiasbynens/dotfiles.git
