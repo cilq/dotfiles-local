@@ -1,0 +1,84 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+
+  user: root
+
+  # Vagrant setup
+  # user: vagrant
+  # sudo: true
+
+  tasks:
+  - name: Set transparency
+    osx_defaults:
+      domain: com.apple.universalaccess
+      key: reduceTransparency
+      type: bool
+      value: "false"
+
+  - name: Color Scheme
+    osx_defaults:
+      key: AppleAquaColorVariant
+      type: int
+      value: 6
+
+  - name: Dark Theme
+    osx_defaults:
+      key: AppleInterfaceStyle
+      value: Dark
+
+  - name: Hide Menu Bar
+    osx_defaults:
+      key: _HIHideMenuBar
+      type: bool
+      value: "false"
+
+  - name: Set Menu Extras
+    osx_defaults:
+      domain: com.apple.systemuiserver
+      key: menuExtras
+      type: array
+      value: ["/System/Library/CoreServices/Menu, Extras/Bluetooth.menu", "/System/Library/CoreServices/Menu Extras/AirPort.menu", "/System/Library/CoreServices/Menu Extras/Battery.menu", "/System/Library/CoreServices/Menu Extras/Clock.menu"]
+
+  - name: Hide Spotlight Icon
+    become: true
+    file:
+      path: /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+      mode: 600
+
+  - name: Restart Services
+#   become: true
+    command: killall "{{ item }}" &> /dev/null
+    ignore_errors: yes
+    with_items:
+#     - Activity Monitor
+#     - Address Book
+#     - Calendar
+#     - Contacts
+#     - cfprefsd
+      - Dock
+      - Finder
+#     - Google Chrome
+#     - Google Chrome Canary
+#     - Mail
+#     - Messages
+#     - Opera
+      - Safari
+#     - SizeUp
+#     - Spectacle
+      - SystemUIServer
+      - Terminal
+      - Transmission"
+      - Tweetbot"
+      - Twitter"
+      - iCal"
+
+#  roles:
+#   - desktop
+#   - common
+#   - deploy-user
+#   - ssh
+#   - ruby-1.9.3
+#   - ruby-2.0.0
+#   - nginx-passenger
+#   - app-imgur-display

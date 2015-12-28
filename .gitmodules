@@ -7,3 +7,6 @@
 [submodule ".reference/mathiasbynens"]
 	path = .reference/mathiasbynens
 	url = https://github.com/mathiasbynens/dotfiles.git
+[submodule ".reference/mazer-rackham"]
+	path = .reference/mazer-rackham
+	url = https://github.com/jlund/mazer-rackham.git
