@@ -1,0 +1,1 @@
+[ -z "$DISPLAY" -a "$(/usr/bin/tty)" = "/dev/ttyv0" ] && exec startx

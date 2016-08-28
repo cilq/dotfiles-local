@@ -1,0 +1,5 @@
+- clean: ['~']
+
+- link:
+    ~/.xinitrc: xinitrc
+    ~/.zshrc_local: zshrc_local
